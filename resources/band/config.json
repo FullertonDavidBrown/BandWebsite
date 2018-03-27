@@ -1,0 +1,37 @@
+{
+	"type": "Collection",
+	"properties": {
+		"BandName": {
+			"name": "BandName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "BandName",
+			"order": 0
+		},
+		"EventDate": {
+			"name": "EventDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "EventDate",
+			"order": 1
+		},
+		"EventLocation": {
+			"name": "EventLocation",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "EventLocation",
+			"order": 2
+		},
+		"BandImage": {
+			"name": "BandImage",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "BandImage",
+			"order": 3
+		}
+	}
+}
