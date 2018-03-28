@@ -14,10 +14,14 @@
   <section>
     <div class="panel panel-default">
       <div class="panel-body">
-        <form data-review="form">
+        <form data-review="form" id="form">
+          <div class="form-group">
+            <label for="name">Band Name*</label>
+            <input class="form-control" name="bandName" id="bandName" autofocus required/>
+          </div>
           <div class="form-group">
             <label for="name">Name*</label>
-            <input class="form-control" name="name" id="name" autofocus required/>
+            <input class="form-control" name="name" id="name" required/>
           </div>
           <div class="form-group">
             <label for="rating">Rating</label>
@@ -26,7 +30,7 @@
           <div class="form-group">
             <label for="reviewText">Review*</label>
              </br>
-                    <textarea name="reviewText" form="form" rows="5" cols="60" required></textarea>
+                    <textarea name="reviewText" id="reviewText" form="form" rows="5" cols="60" required></textarea>
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
@@ -34,6 +38,12 @@
       </div>
     </div>
   </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+  <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/main.js" charset="utf-8"></script>
+
 </body>
 
 </html>
