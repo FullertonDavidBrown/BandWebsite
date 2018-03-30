@@ -11,8 +11,6 @@
 
   var BandDataStore = App.BandDataStore;
 
-
-
   var EventList = App.EventList;
 
   var BandInfor = App.BandInfor;
@@ -26,7 +24,7 @@
   var bandName = new BandInfor(BAND_NAME_SELECTOR);
 
 
-  //set name of band
+  //set name of band (set to default "bend value") // needs to be changed
   ds.get("Bend", function(data){
     bandName.setName(data[0]);
   });
@@ -36,22 +34,12 @@
     bandDescript.getInfo(data[0]);
   });
 
-  //add the event list to the page (have not checked for if it is for the right band)
-  // ds.getAll(function(data){
-  //   data.forEach(function(event){
-  //     eList.addEvent(event);
-  //   });
-  // });
 
   ds.get("Bend", function(data){
     data.forEach(function(event){
       eList.addEvent(event);
   });
 });
-
-
-
-
 
 
 })(window);

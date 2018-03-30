@@ -15,18 +15,8 @@
       }
   }
 
-//   CheckList.prototype.addClickHandler = function(fn) {
-//   this.$element.on("click", "input", function(event) {
-//     var email = event.target.value;
-//     this.removeRow(email);
-//     fn(email);
-//   }.bind(this));
-// };
-
 //get and add band info to page
   BandInfor.prototype.getInfo = function(nEvent) {
-  //remove any existing rows that match the email address
-  //this.removeRow(nEvent.Date);
 
   //create a  new instance  of a row, using the coffee order information
   var bInfo = new Descript(nEvent);
@@ -58,8 +48,6 @@ function Descript(Info) {
   var About = Info.BandInfo;
 
   $para.append(About);
-  //$tableRow.append(eDate);
-  //$div.append($label);
 
   this.$element = $para;
 }
