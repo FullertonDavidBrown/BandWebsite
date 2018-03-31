@@ -15,12 +15,14 @@
 
     <!-- Custom styles for this template -->
     <link href="css/stylesheet.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/login.css">
 
   </head>
 
   <body>
 
     <!-- Navigation -->
+    <form data-coffee-order="form">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">Band Feedback</a>
@@ -30,110 +32,85 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Login
-                <span class="sr-only">(current)</span>
-              </a>
+            <button id="presentModal">Login</button>
+            <div class="modalDisplay" id="modalDisplay">
+              <div class="modalLoginBox" id="modalBox">
+                <h2 id="header">Welcome</h2>
+                <form class="loginForm" id="loginForm">
+                  <!-- Input fields -->
+                  <p class="title">Email</p>
+                  <input class="textField" id="signInEmail" type="text" name="email" placeholder="Enter email here">
+                  <p class="title">Password</p>
+                  <input class="textField" id="signInPass" type="password" name="pass" placeholder="Enter password here">
+                  <!-- Submit button -->
+                  <button class="submitBtn" id="submitSignIn" type="button">Log in</button>
+                  <!-- Sign up link -->
+                  <a class="linkToOtherForm" id="linkToSignUp">Don't have an account? Sign up!</a>
+                </form>
+                <form class="signUpForm" id="signUpForm">
+                  <!-- Input fields -->
+                  <p class="title">Band Name</p>
+                  <input class="textField" id="bandName" type="text" name="bandName" placeholder="Band Name">
+                  <p class="title">Email</p>
+                  <input class="textField" id="signUpEmail" type="text" name="email" placeholder="abc@123.com">
+                  <p class="title">Password</p>
+                  <input class="textField" id="signUpPass" type="password" name="pass" placeholder="*****">
+                  <p class="title">Confirm Password</p>
+                  <input class="textField" id="confirmPass" type="password" name="confirmPass" placeholder="Confirm password">
+                  <!-- Submit button -->
+                  <button class="submitBtn" id="submitSignUp" type="button">Submit</button>
+                  <!-- Sign up link -->
+                  <a class="linkToOtherForm" id="linkToSignIn">Back to login</a>
+                </form>
+              </div>
+            </div>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Sign Up</a>
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li> -->
           </ul>
         </div>
       </div>
     </nav>
-
+</form>
     <!-- Page Content -->
     <div class="container">
 
       <!-- Jumbotron Header -->
       <header class="jumbotron my-4">
         <h1 class="display-3">A Warm Welcome!</h1>
-        <p class="lead">You can review and provide feedback for the local band concert that you recently attended.</p>
-        <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+        <p class="lead">You can review and provide feedback for the local band concert that you recently attended.
+        Below you will find the concerts that took place recently. Feel free to check for more information,
+        and write review, or you can write a review directly from this page.
+        </p>
       </header>
 
-      <!-- Page Features -->
-      <div class="row text-center">
-
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="card">
-            <img class="card-img-top" src="images/band-image1.jpg" alt="">
-            <div class="card-body">
-              <h4 class="card-title">Vampire</h4>
-              <p class="card-text">Event took place on 03/05/2018 in San Diego.</p>
-              <a href="#" class="btn btn-primary">More Details!</a>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Write a review!</a>
-            </div>
-          </div>
+      <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>LATEST SHOWS: </h4>
+        <div data-coffee-order="checklist">
         </div>
-
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="card">
-            <img class="card-img-top" src="images/band-image2.jpg" alt="">
-            <div class="card-body">
-              <h4 class="card-title">Wanderlust</h4>
-              <p class="card-text">Event took place on 03/10/2018 in San Jose.</p>
-              <a href="#" class="btn btn-primary">More Details!</a>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Write a review!</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="card">
-            <img class="card-img-top" src="images/band-image3.jpg" alt="">
-            <div class="card-body">
-              <h4 class="card-title">Black Thoughts</h4>
-              <p class="card-text">Event took place on 03/12/2018 in New York.</p>
-              <a href="#" class="btn btn-primary">More Details!</a>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Write a review!</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="card">
-            <img class="card-img-top" src="images/band-image4.jpg" alt="">
-            <div class="card-body">
-              <h4 class="card-title">Powerblast</h4>
-              <p class="card-text">Event took place on 03/16/2018 in Las Vegas.</p>
-              <a href="#" class="btn btn-primary">More Details!</a>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Write a review!</a>
-            </div>
-          </div>
-        </div>
-
       </div>
-      <!-- /.row -->
+    </div>
 
     </div>
-    <!-- /.container -->
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 text-center text-white">CPSC 473 &copy; Project 1</p>
       </div>
-      <!-- /.container -->
     </footer>
 
     <!-- Bootstrap core JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/login.js"></script>
+    <script src="scripts/band.js" charset="utf-8"></script>
+    <script src="scripts/formhandler.js" charset="utf-8"></script>
+    <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+    <script src="scripts/datastore.js" charset="utf-8"></script>
+    <script src="scripts/truck.js" charset="utf-8"></script>
+    <script src="scripts/main.js" charset="utf-8"></script>
 
   </body>
 
