@@ -1,6 +1,7 @@
 (function(window) {
   "use strict";
-  var FORM_SELECTOR_COMMENTS = "[data-band-review = \"form\"]";
+  var FORM_SELECTOR = "[data-band-review = \"form\"]";
+  var FORM_SELECTOR_COMMENTS = "[data-band-review = \"review\"]";
   var CHECKLIST_SELECTOR = "[data-band-review = \"user-comments\"]";
   var SERVER_URL_COMMENTS = "http://localhost:2403/review";
   var SERVER_URL_BANDS = "http://localhost:2403/band";
@@ -27,16 +28,9 @@
   window.bandDetails = bandDetails;
 
   var commentsSummary = new Comments(CHECKLIST_SELECTOR);
-  var formHandlerComments = new FormHandler(FORM_SELECTOR_COMMENTS);
+  var formHandlerComments = new FormHandler(FORM_SELECTOR);
 
-  formHandlerComments.addSubmitHandler(function(data) {
-      remoteDSComments.add.call(remoteDSComments, 0, data);
-      console.log(bandName);
-      window.location.href="reviewexample.html?bandName=" + bandName;
 
-  });
-  $(FORM_SELECTOR_COMMENTS).ready(function() {
-  
- });
+
 
 })(window);

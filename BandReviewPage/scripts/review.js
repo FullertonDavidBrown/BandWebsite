@@ -4,6 +4,8 @@
   var App = window.App || {};
   var $ = window.jQuery;
 
+
+
   function Comments(selector) {
     if (!selector) {
       throw new Error("No selector provided");
@@ -23,13 +25,7 @@
     this.$element.append(rowElement.$element);
   };
 
-/*  Comments.prototype.removeRow = function(email) {
-    console.log("Calling CheckList.removeRow()");
-    this.$element
-      .find("[value=\"" + email + "\"]")
-      .closest("[data-coffee-order=\"checkbox\"]")
-      .remove();
-  };*/
+
 
   function Row(bandComment) {
     var $div = $("<div></div>", {
@@ -38,12 +34,12 @@
     });
 
     var $label = $("<label></label>");
-    var rating = bandComment.Rating + "&#9734";
+  //  var rating = bandComment.Rating + "&#9734";
 
 
     var description = "<p><b>" + bandComment.Name + ":<br/><b>";
-    description += "<small><font color=\"gray\">-" + bandComment.Rating + "</font></small><br/>";
-    description += "<span class=\"glyphicon\">" + thumbIcon +"</span>"+"<font color=\"gray\"> <i> \"" + bandComment.Description + "\"</i></font><br/><br/>";
+    description += "<label>Rating :<span>" + bandComment.Rating +"&#9734" + "</span></label>";
+    description += "<b>Description : </b> <span>" +bandComment.Description +"</span>";
 
     $label.append(description);
     $div.append($label);
