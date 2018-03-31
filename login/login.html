@@ -1,32 +1,59 @@
 <!doctype html>
 <html>
 
-  <head>
-    <meta charset="utf-8">
-    <title>Band</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="login.css">
+</head>
 
-  <body>
-    <button id="modalBtn" class="button">Click Here</button>
+<body>
+  <button id="presentModal" class="button">Click Here</button>
 
-    <div id="simpleModal" class="modal">
-      <div class="modal-content">
-        <span class="title">Welcome</span>
+  <div class="modalDisplay" id="modalDisplay">
+    <div class="modalLoginBox" id="modalBox">
+      <h2 id="header">Welcome</h2>
 
-        <form class="loginForm" action="#0">
-          <input id="emailField" class="inputLabel" type="email" name="email" placeholder="Email"><br>
-          <input type="password" id="passwordField" class="inputLabel" name="pass" placeholder="Password"><br>
-        </form>
+      <form class="loginForm" id="loginForm">
+        <!-- Input fields -->
+        <p class="title">Email</p>
+        <input class="textField" id="signInEmail" type="text" name="email" placeholder="Enter email here">
 
-        <button id="okayBtn" class="okayBtn">Login</button>
-        <button id="closeBtn" class="closeBtn">Close</button>
+        <p class="title">Password</p>
+        <input class="textField" id="signInPass" type="password" name="pass" placeholder="Enter password here">
 
-        <span class="signUp">Don't have an account? Register!</span>
-      </div>
+        <!-- Submit button -->
+        <button class="submitBtn" id="submitSignIn" type="button">Log in</button>
+
+        <!-- Sign up link -->
+        <a class="linkToOtherForm" id="linkToSignUp">Don't have an account? Sign up!</a>
+      </form>
+
+      <form class="signUpForm" id="signUpForm">
+        <!-- Input fields -->
+        <p class="title">Band Name</p>
+        <input class="textField" id="bandName" type="text" name="bandName" placeholder="Band Name">
+
+        <p class="title">Email</p>
+        <input class="textField" id="signUpEmail" type="text" name="email" placeholder="abc@123.com">
+
+        <p class="title">Password</p>
+        <input class="textField" id="signUpPass" type="password" name="pass" placeholder="*****">
+
+        <p class="title">Confirm Password</p>
+        <input class="textField" id="confirmPass" type="password" name="confirmPass" placeholder="Confirm password">
+
+        <!-- Submit button -->
+        <button class="submitBtn" id="submitSignUp" type="button">Submit</button>
+
+        <!-- Sign up link -->
+        <a class="linkToOtherForm" id="linkToSignIn">Back to login</a>
+      </form>
+
     </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+  <script src="login.js"></script>
+</body>
 
-    <script src="main.js"></script>
-  </body>
 </html>
