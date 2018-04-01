@@ -140,7 +140,7 @@ $(signUpBtn).click(function(){
     // Only execute if the entry is not already in the database
     if (!alreadyInDB) {
       $.post(url, {
-          Band: band,
+          BandName: band,
           Email: email,
           Password: password
         },
