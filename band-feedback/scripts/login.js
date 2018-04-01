@@ -199,7 +199,7 @@ $(signUpBtn).click(function(){
 
       $.post(url12, {
 
-          Band: band,
+          BandName: band,
 
           Email: email,
 
