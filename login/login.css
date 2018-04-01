@@ -21,7 +21,7 @@ body {
   width: 350px;
   height: 380px;
   box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 1.0);
   padding: 40px 40px;
   border-radius: 20px;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
