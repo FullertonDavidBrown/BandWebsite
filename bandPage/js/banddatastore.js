@@ -12,10 +12,24 @@
       this.serverUrl = url;
     }
 
-    // BandDataStore.prototype.add = function(){
-    //
-    //
-    // };
+     BandDataStore.prototype.add = function(key, val){
+
+       $.ajax(this.serverUrl, {
+          type: "POST",
+          contentType: "application/json",
+          data: JSON.stringify( //use stringify to take the json data to set as strings to add
+            val
+          ),
+            success: function(serverResponse) {
+              // Do something
+              console.log(serverResponse);
+          },
+     error: function(xhr) {
+       console.log(xhr.responseText);
+     }
+   });
+
+    };
 
     BandDataStore.prototype.getAll = function(cb) { //cb is callback cb
       $.ajax(this.serverUrl, {

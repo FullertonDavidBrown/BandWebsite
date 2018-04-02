@@ -18,7 +18,7 @@
 //get and add band info to page
   BandInfor.prototype.getInfo = function(nEvent) {
 
-  //create a  new instance  of a row, using the coffee order information
+  //create a new instance of a row, using the coffee order information
   var bInfo = new Descript(nEvent);
 
   //Add the new row instance's $element property to the checklist
@@ -31,15 +31,7 @@ BandInfor.prototype.setName = function(nEvent){
 
 };
 
-//remove rowElement
-// CheckList.prototype.removeRow = function(date) {
-//   this.$element
-//     .find("[value=\"" + email + "\"]")
-//     .closest("[data-coffee-order=\"checkbox\"]")
-//     .remove();
-// };
-
-//comsatructor for new event for the particular band
+//constructor for new event for the particular band
 function Descript(Info) {
 
   var $para = $("<p></p>");

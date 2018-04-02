@@ -36,8 +36,6 @@ EventList.prototype.addEvent = function(nEvent) {
 
 //comsatructor for new event for the particular band
 function Event(eventInfo) {
-
-
   var $tableRow = $("<tr></tr>");
 
   var eDate = "<td>" + eventInfo.EventDate + "</td>";
