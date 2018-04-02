@@ -109,7 +109,7 @@ $(signInBtn).click(function(){
       if (element.Email == email && element.Password == password) {
         // Log in the user to the band page here
         console.log("Found the user.");
-        window.location.href = bandPageURL;
+        window.location.href = bandPageURL + "?" + email;
         return;
       }
 
@@ -136,16 +136,6 @@ $(signUpBtn).click(function(){
 
   if ( password != confirmPass) {
     $(signUpError).text("Passwords do not match");
-    $(signUpError).show();
-    return;
-  }
-
-  // Use regex to determine if email is valid
-  // Regular expression found at http://emailregex.com/
-  validEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@ ((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-  console.log(validEmail);
-  if(!validEmail) {
-    $(signUpError).text("Email address is not valid");
     $(signUpError).show();
     return;
   }
