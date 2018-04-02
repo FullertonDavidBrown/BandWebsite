@@ -1,3 +1,4 @@
+var bandPageURL = "http://localhost:3000/band.html"
 var url = "http://localhost:2403/user";
 
 // Modal and login trigger button
@@ -28,15 +29,22 @@ var signUpBtn = document.getElementById("submitSignUp");
 var linkToSignUp = document.getElementById("linkToSignUp");
 var linkToSignIn = document.getElementById("linkToSignIn");
 
+// Error reporting
+var loginError = document.getElementById("loginError");
+var signUpError = document.getElementById("signUpError");
+
 
 // Begin hidden
 $(modalAll).hide();
 $(signUpForm).hide();
+$(loginError).hide();
+$(signUpError).hide();
 
 
 // If the button is clicked, show the modal view
 $(modalBtn).click(function () {
   $(modalAll).fadeIn();
+  $(signInEmail).focus();
 });
 
 
@@ -53,13 +61,14 @@ $(linkToSignUp).click(function(){
   // Hide the login form and show the sign up form
   $(loginForm).hide();
   $(signUpForm).fadeIn(500);
-  $(modalBox).css("height", 540);
+  $(modalBox).css("height", 560);
   $(title).text("Sign Up");
 
   // Reset any entries into the login form
   $(signInEmail).val("");
   $(signInPassword).val("");
-
+  $(loginError).hide();
+  $(bandName).focus();
 });
 
 
@@ -76,6 +85,8 @@ $(linkToSignIn).click(function(){
   $(signUpEmail).val("");
   $(signUpPassword).val("");
   $(confirmPassword).val("");
+  $(signUpError).hide()
+  $(signInEmail).focus();
 });
 
 
@@ -88,6 +99,7 @@ $(signInBtn).click(function(){
   // Reset the password value after the click
   $(signInPassword).val("");
 
+  // Check for matching account
   $.get(url, function(serverResponse) {
     if(serverResponse.length === 0) {
       console.log("Database is empty");
@@ -95,11 +107,14 @@ $(signInBtn).click(function(){
     // Find the matching email address in the db and get corresponding id
     serverResponse.forEach(function(element) {
       if (element.Email == email && element.Password == password) {
+        // Log in the user to the band page here
         console.log("Found the user.");
+        window.location.href = bandPageURL;
         return;
       }
 
-      console.log("Incorrect email or password: " + email);
+      $(loginError).text("Incorrect email or password");
+      $(loginError).show();
     });
   });
 });
@@ -113,25 +128,50 @@ $(signUpBtn).click(function(){
   let password = $(signUpPassword).val();
   let confirmPass = $(confirmPassword).val();
 
+  if (band == "" || email == "" || password == "" || confirmPass == "") {
+    $(signUpError).text("All fields must be completed");
+    $(signUpError).show();
+    return;
+  }
+
+  if ( password != confirmPass) {
+    $(signUpError).text("Passwords do not match");
+    $(signUpError).show();
+    return;
+  }
+
+  // Use regex to determine if email is valid
+  // Regular expression found at http://emailregex.com/
+  validEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@ ((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+  console.log(validEmail);
+  if(!validEmail) {
+    $(signUpError).text("Email address is not valid");
+    $(signUpError).show();
+    return;
+  }
+
   // Reset the password value after the click
   $(signUpPassword).val("");
   $(confirmPassword).val("");
 
   $.get(url, function(serverResponse) {
+    $(signUpError).show();
     // Prevents adding duplicate entries
     var alreadyInDB = false;
 
     serverResponse.forEach(function(element) {
       // If there is already an email with specified name, deny post
       if (element.Email == email) {
-        console.log("That email address is taken. Try again.");
+        $(signUpError).text("That email address is taken");
+        $(signUpError).show();
         alreadyInDB = true;
         return;
       }
 
       // If there is already a band with specified name, deny post
       if (element.BandName == band) {
-        console.log("That band name is taken. Try again.")
+        $(signUpError).text("That band name is taken");
+        $(signUpError).show();
         alreadyInDB = true;
         return;
       }
@@ -145,6 +185,9 @@ $(signUpBtn).click(function(){
           Password: password
         },
         function(serverResponse) {
+          $(signUpError).hide();
+          // Log in the user to the band page here
+          //window.location.href = bandPageURL;
           console.log(serverResponse);
         });
 

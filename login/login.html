@@ -17,10 +17,12 @@
       <form class="loginForm" id="loginForm">
         <!-- Input fields -->
         <p class="title">Email</p>
-        <input class="textField" id="signInEmail" type="text" name="email" placeholder="Enter email here">
+        <input class="textField" id="signInEmail" type="text" name="email" placeholder="Enter email here" autofocus>
 
         <p class="title">Password</p>
         <input class="textField" id="signInPass" type="password" name="pass" placeholder="Enter password here">
+
+        <span class="errorMessage" id="loginError">An error occured</span>
 
         <!-- Submit button -->
         <button class="submitBtn" id="submitSignIn" type="button">Log in</button>
@@ -32,7 +34,7 @@
       <form class="signUpForm" id="signUpForm">
         <!-- Input fields -->
         <p class="title">Band Name</p>
-        <input class="textField" id="bandName" type="text" name="bandName" placeholder="Band Name">
+        <input class="textField" id="bandName" type="text" name="bandName" placeholder="Your band">
 
         <p class="title">Email</p>
         <input class="textField" id="signUpEmail" type="text" name="email" placeholder="abc@123.com">
@@ -42,6 +44,8 @@
 
         <p class="title">Confirm Password</p>
         <input class="textField" id="confirmPass" type="password" name="confirmPass" placeholder="Confirm password">
+
+        <span class="errorMessage" id="signUpError">An error occured</span>
 
         <!-- Submit button -->
         <button class="submitBtn" id="submitSignUp" type="button">Submit</button>
