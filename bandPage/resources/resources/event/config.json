@@ -1,0 +1,29 @@
+{
+	"type": "Collection",
+	"properties": {
+		"BandName": {
+			"name": "BandName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "BandName",
+			"order": 0
+		},
+		"EventLocation": {
+			"name": "EventLocation",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "EventLocation",
+			"order": 1
+		},
+		"EventDate": {
+			"name": "EventDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "EventDate",
+			"order": 2
+		}
+	}
+}

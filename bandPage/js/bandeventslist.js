@@ -44,9 +44,12 @@ function Event(eventInfo) {
 
   var eLocation = "<td>" + eventInfo.EventLocation + "</td>";
 
+  var eDetails = "<td> <button type=\"button\">More Info</button> <td>";
+
 
   $tableRow.append(eLocation);
   $tableRow.append(eDate);
+  $tableRow.append(eDetails);
 
   this.$element = $tableRow;
 }

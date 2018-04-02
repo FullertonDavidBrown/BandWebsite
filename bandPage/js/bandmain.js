@@ -23,19 +23,25 @@
 
   var bandName = new BandInfor(BAND_NAME_SELECTOR);
 
+//gets the current band name and lists of
+  var bandNameNew = (function(){
+    var requestParam = window.location.search.split("?")[1];
+    return decodeURIComponent(requestParam.split("=")[1]);
+  })();
 
-  //set name of band (set to default "bend value") // needs to be changed
-  ds.get("Bend", function(data){
+
+  //set name of band (set to default "value") // needs to be changed
+  ds.get(bandNameNew, function(data){
     bandName.setName(data[0]);
   });
 
   //add descript of set band
-  ds.get("Bend", function(data){
+  ds.get(bandNameNew, function(data){
     bandDescript.getInfo(data[0]);
   });
 
 
-  ds.get("Bend", function(data){
+  ds.get(bandNameNew, function(data){
     data.forEach(function(event){
       eList.addEvent(event);
   });

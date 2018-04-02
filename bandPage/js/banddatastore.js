@@ -12,6 +12,11 @@
       this.serverUrl = url;
     }
 
+    // BandDataStore.prototype.add = function(){
+    //
+    //
+    // };
+
     BandDataStore.prototype.getAll = function(cb) { //cb is callback cb
       $.ajax(this.serverUrl, {
         type: "GET",
@@ -44,7 +49,7 @@
       });
     };
 
-    
+
 
     App.BandDataStore = BandDataStore;
     window.App = App;

@@ -44,16 +44,12 @@ function Descript(Info) {
 
   var $para = $("<p></p>");
 
-
   var About = Info.BandInfo;
 
   $para.append(About);
 
   this.$element = $para;
 }
-
-
-
 
 App.BandInfor = BandInfor;
 window.App = App;
