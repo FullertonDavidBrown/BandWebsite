@@ -14,11 +14,13 @@ Setup (Using Ubuntu Mate VM)
 Instructions for Using the Site
 1. The Home Page allows for the individual band to sign up/log in to the site. It also displays the most recent events added for feedback as well as buttons for going to that band's band page as well as a review button to redirect to the review form. Signing up allows for the band to create their own page with a description. Logging in redirects the user to their band page.
 
-2. Clicking "More Info" will lead to the band page for that particular band. It will display the band's name, description, and their list of events. Each event will have a review button, where it will redirect to the review form.
+2.From the login to the band page, there will be an "Add event" button at the end of the event list. Once the form is filled out with the band name, location, and date, then the event will be added to the event list.
 
-3. Once an event is added (with the date and location), then it will appear on their band page. It will be open for attendees of their events to click and submit their review.
+3. Clicking "More Info" will lead to the band page for that particular band. It will display the band's name, description, and their list of events. Each event will have a review button, where it will redirect to the review form.
 
-4. Upon clicking the review button, it will redirect the user to the review form. It requires the name, rating, and description of the review for submission. Once submitted, the user will be redirected to the Band's review page, where it will show all the reviews.
+4. Once an event is added (with the date and location), then it will appear on their band page. It will be open for attendees of their events to click and submit their review.
+
+5. Upon clicking the review button, it will redirect the user to the review form. It requires the name, rating, and description of the review for submission. Once submitted, the user will be redirected to the Band's review page, where it will show all the reviews.
 
 
 
